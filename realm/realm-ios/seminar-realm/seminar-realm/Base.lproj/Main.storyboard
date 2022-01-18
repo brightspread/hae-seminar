@@ -15,14 +15,72 @@
                     <view key="view" contentMode="scaleToFill" id="yw2-yE-H8V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pi7-dG-Ob9">
+                                <rect key="frame" x="50" y="127" width="314" height="487"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwW-u6-Fkb">
+                                <rect key="frame" x="157" y="714" width="100" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="LbF-hf-vOE"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7rS-KK-0Ts"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eC-wV-0R0">
+                                <rect key="frame" x="157" y="772" width="100" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="BQu-r8-m0o"/>
+                                    <constraint firstAttribute="width" constant="100" id="Yog-Lb-01Y"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="DeleteAll"/>
+                                <connections>
+                                    <action selector="deleteButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dK4-1i-ti1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCf-CU-quA">
+                                <rect key="frame" x="142" y="819" width="130" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="H1y-nH-AzL"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="MVVM VC"/>
+                                <connections>
+                                    <action selector="mvvmButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yd5-lT-rEB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WGX-Yh-mC8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UwW-u6-Fkb" firstAttribute="top" secondItem="Pi7-dG-Ob9" secondAttribute="bottom" priority="999" constant="100" id="1sS-wa-rzm"/>
+                            <constraint firstItem="Pi7-dG-Ob9" firstAttribute="leading" secondItem="WGX-Yh-mC8" secondAttribute="leading" constant="50" id="83J-XH-zS7"/>
+                            <constraint firstItem="Pi7-dG-Ob9" firstAttribute="top" secondItem="WGX-Yh-mC8" secondAttribute="top" constant="39" id="ASq-VM-6sd"/>
+                            <constraint firstItem="WGX-Yh-mC8" firstAttribute="bottom" secondItem="7eC-wV-0R0" secondAttribute="bottom" constant="59" id="CPB-QN-mcV"/>
+                            <constraint firstItem="7eC-wV-0R0" firstAttribute="centerX" secondItem="WGX-Yh-mC8" secondAttribute="centerX" id="NRc-5T-8Rj"/>
+                            <constraint firstItem="cCf-CU-quA" firstAttribute="top" secondItem="7eC-wV-0R0" secondAttribute="bottom" constant="16" id="QD7-XD-0ED"/>
+                            <constraint firstItem="7eC-wV-0R0" firstAttribute="top" secondItem="UwW-u6-Fkb" secondAttribute="bottom" constant="27" id="Sk6-qw-IBC"/>
+                            <constraint firstItem="WGX-Yh-mC8" firstAttribute="trailing" secondItem="Pi7-dG-Ob9" secondAttribute="trailing" constant="50" id="f5u-4B-JNu"/>
+                            <constraint firstItem="cCf-CU-quA" firstAttribute="centerX" secondItem="WGX-Yh-mC8" secondAttribute="centerX" id="q9n-oF-q2P"/>
+                            <constraint firstItem="UwW-u6-Fkb" firstAttribute="centerX" secondItem="WGX-Yh-mC8" secondAttribute="centerX" id="tB4-Ja-OWb"/>
+                            <constraint firstItem="UwW-u6-Fkb" firstAttribute="height" secondItem="7eC-wV-0R0" secondAttribute="height" id="ypf-yr-C79"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wkv-Fu-XYO"/>
+                    <connections>
+                        <outlet property="lbResult" destination="Pi7-dG-Ob9" id="aeC-9M-RMZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="691" y="385"/>
+            <point key="canvasLocation" x="689.85507246376812" y="384.375"/>
         </scene>
         <!--Seminar View Controller-->
         <scene sceneID="sIn-SK-sn2">
