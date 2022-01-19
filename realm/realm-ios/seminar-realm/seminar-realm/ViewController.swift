@@ -41,6 +41,13 @@ class ViewController: UIViewController {
         seminarViewController.viewModel = SeminarViewModel()
         navigationController?.pushViewController(seminarViewController, animated: true)
     }
+    
+    func navigateToFirestoreVC() {
+        let firestoreViewController = storyboard?.instantiateViewController(withIdentifier: "FirestoreViewController") as! FirestoreViewController
+        firestoreViewController.viewModel = FirestoreViewModel()
+        navigationController?.pushViewController(firestoreViewController, animated: true)
+    }
+
         
     // MARK: Button
     @IBAction func addButtonTouched(_ sender: Any) {
@@ -65,6 +72,10 @@ class ViewController: UIViewController {
     
     @IBAction func mvvmButtonTouched(_ sender: Any) {
         navigateToSeminarVC()
+    }
+    
+    @IBAction func firestoreButtonTouched(_ sender: Any) {
+        navigateToFirestoreVC()
     }
     
     // MARK: Realm

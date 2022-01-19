@@ -24,6 +24,9 @@
 		C8F617FF27969AD600FEFC83 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C8F617FE27969AD600FEFC83 /* FirebaseAnalytics */; };
 		C8F6180127969AD600FEFC83 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C8F6180027969AD600FEFC83 /* FirebaseFirestore */; };
 		C8F6180527969D5B00FEFC83 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8F6180427969D5B00FEFC83 /* GoogleService-Info.plist */; };
+		C8F618072797AA4C00FEFC83 /* FirestoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F618062797AA4C00FEFC83 /* FirestoreViewController.swift */; };
+		C8F618092797AC2B00FEFC83 /* FirestoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F618082797AC2B00FEFC83 /* FirestoreViewModel.swift */; };
+		C8F6180C2797CC7700FEFC83 /* BoltsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C8F6180B2797CC7700FEFC83 /* BoltsSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,8 @@
 		C8F617F9279677F800FEFC83 /* SeminarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeminarViewModel.swift; sourceTree = "<group>"; };
 		C8F617FB279678CD00FEFC83 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		C8F6180427969D5B00FEFC83 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		C8F618062797AA4C00FEFC83 /* FirestoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreViewController.swift; sourceTree = "<group>"; };
+		C8F618082797AC2B00FEFC83 /* FirestoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,7 @@
 				C8F617FF27969AD600FEFC83 /* FirebaseAnalytics in Frameworks */,
 				C8F617F12796772100FEFC83 /* RealmSwift in Frameworks */,
 				C8F6180127969AD600FEFC83 /* FirebaseFirestore in Frameworks */,
+				C8F6180C2797CC7700FEFC83 /* BoltsSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				C8F617F9279677F800FEFC83 /* SeminarViewModel.swift */,
+				C8F618082797AC2B00FEFC83 /* FirestoreViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -168,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				C8F617F7279677ED00FEFC83 /* SeminarViewController.swift */,
+				C8F618062797AA4C00FEFC83 /* FirestoreViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -192,6 +200,7 @@
 				C8F617F02796772100FEFC83 /* RealmSwift */,
 				C8F617FE27969AD600FEFC83 /* FirebaseAnalytics */,
 				C8F6180027969AD600FEFC83 /* FirebaseFirestore */,
+				C8F6180B2797CC7700FEFC83 /* BoltsSwift */,
 			);
 			productName = "seminar-realm";
 			productReference = C8F617BC2796758E00FEFC83 /* seminar-realm.app */;
@@ -268,6 +277,7 @@
 			packageReferences = (
 				C8F617EF2796772100FEFC83 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				C8F617FD27969AD500FEFC83 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C8F6180A2797CC7600FEFC83 /* XCRemoteSwiftPackageReference "Bolts-Swift" */,
 			);
 			productRefGroup = C8F617BD2796758E00FEFC83 /* Products */;
 			projectDirPath = "";
@@ -315,10 +325,12 @@
 			files = (
 				C8F617FA279677F800FEFC83 /* SeminarViewModel.swift in Sources */,
 				C8F617C42796758E00FEFC83 /* ViewController.swift in Sources */,
+				C8F618072797AA4C00FEFC83 /* FirestoreViewController.swift in Sources */,
 				C8F617C02796758E00FEFC83 /* AppDelegate.swift in Sources */,
 				C8F617C22796758E00FEFC83 /* SceneDelegate.swift in Sources */,
 				C8F617F62796776B00FEFC83 /* Seminar.swift in Sources */,
 				C8F617FC279678CD00FEFC83 /* RealmManager.swift in Sources */,
+				C8F618092797AC2B00FEFC83 /* FirestoreViewModel.swift in Sources */,
 				C8F617F8279677ED00FEFC83 /* SeminarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -701,6 +713,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		C8F6180A2797CC7600FEFC83 /* XCRemoteSwiftPackageReference "Bolts-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BoltsFramework/Bolts-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -718,6 +738,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C8F617FD27969AD500FEFC83 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		C8F6180B2797CC7700FEFC83 /* BoltsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8F6180A2797CC7600FEFC83 /* XCRemoteSwiftPackageReference "Bolts-Swift" */;
+			productName = BoltsSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
