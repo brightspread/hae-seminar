@@ -16,10 +16,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateSeminar()
         if let documentsPath = FileManager.default.urls(for:.documentDirectory, in: .userDomainMask).first?.path {
             print("Documents Directory: " + documentsPath) // DB 파일 확인을 위해 App 데이터 파일 위치 확인
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateSeminar()
     }
     
     // MARK: UI
@@ -29,7 +33,6 @@ class ViewController: UIViewController {
         for seminar in seminars {
             string += "\(seminar.title) \(seminar.time)\n"
         }
-        
         lbResult.text = string
     }
     
@@ -57,6 +60,7 @@ class ViewController: UIViewController {
     
     @IBAction func deleteButtonTouched(_ sender: Any) {
         removeAllSeminar()
+        updateSeminar()
     }
     
     @IBAction func mvvmButtonTouched(_ sender: Any) {
@@ -83,7 +87,6 @@ class ViewController: UIViewController {
                 realm.delete(seminar)
             }
         }
-        updateSeminar()
     }
     
     // MARK: Alert
