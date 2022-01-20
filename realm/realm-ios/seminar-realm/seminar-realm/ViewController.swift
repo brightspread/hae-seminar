@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var lbResult: UILabel!
     
-    private let realm = try! Realm()
+    private let realm = try! Realm() // Realm db 객체
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,8 @@ class ViewController: UIViewController {
     }
     
     // MARK: UI
+    
+    // 저장된 DB 가져오기
     private func updateSeminar() {
         let seminars = fetchSeminar()
         var string = ""
@@ -36,12 +38,14 @@ class ViewController: UIViewController {
         lbResult.text = string
     }
     
+    // MVVM 적용된 Viewcontroller로 이동
     func navigateToSeminarVC() {
         let seminarViewController = storyboard?.instantiateViewController(withIdentifier: "SeminarViewController") as! SeminarViewController
         seminarViewController.viewModel = SeminarViewModel()
         navigationController?.pushViewController(seminarViewController, animated: true)
     }
     
+    // Firestore 테스트 view로 이동.
     func navigateToFirestoreVC() {
         let firestoreViewController = storyboard?.instantiateViewController(withIdentifier: "FirestoreViewController") as! FirestoreViewController
         firestoreViewController.viewModel = FirestoreViewModel()
