@@ -8,7 +8,6 @@
 import Foundation
 import RealmSwift
 
-
 // 세미나
 // - 세미나 ID
 // - 세미나 제목

@@ -23,13 +23,13 @@ class FirestoreViewController: UIViewController {
     }
     
     @IBAction func getDataButtonTouched(_ sender: Any) {
-        viewModel.getDB()
-        self.updateSeminar()
-        
-        // Next Step (Bolts)
-//        viewModel.getDBTask().continueOnSuccessWith { [self] result in
-//            lbResult.text = viewModel.allSeminarString(seminarArr: result)
-//        }
+//        viewModel.getDB()
+//        self.updateSeminar()
+//
+//         Next Step (Bolts)
+        viewModel.getDBTask().continueOnSuccessWith { [self] result in
+            lbResult.text = viewModel.allSeminarString(seminarArr: result)
+        }
     }
     
     @IBAction func addDataButtonTouched(_ sender: Any) {

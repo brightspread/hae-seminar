@@ -62,6 +62,7 @@ class ViewController: UIViewController {
             // 텍스트 필드에 입력한 내용 불러오기
             let title = alert.textFields![0].text!
             let time = alert.textFields![1].text!
+            
             self.addSeminar(title: title, time: time)
             self.updateSeminar()
         }
